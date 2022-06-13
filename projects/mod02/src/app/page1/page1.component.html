@@ -1,0 +1,14 @@
+<ul>
+    <li *ngFor="let item of Friends">
+        {{item}}
+    </li>
+</ul>
+
+<p *ngIf="Friends.length >4">朋友很多歐!!</p>
+//直接運算
+<p> 100+1 = {{100+1 }}</p>
+//呼叫函示
+<p> 100+1+ getVal()= {{100+1 + getVal()}}</p> 
+
+<div>{{picture.Subject}}</div>
+<img src={{picture.Url}} />
