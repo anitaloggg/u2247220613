@@ -20,6 +20,12 @@
     <li><a href='page4'>Event Bind</a></li>
     <li><a href='page5'>ngModel Bind</a></li>
   </ul>
+  <!-- <SearchBox [searchText]="mySearch" (searchTextChange)="mySearch=$event"></SearchBox> -->
+  <SearchBox [(searchText)]="mySearch"></SearchBox>
+  <h3 *ngIf="mySearch.length>0">
+    找到了 {{mySearch}} !!
+  </h3>
+
 </div>
 
 <router-outlet></router-outlet>
