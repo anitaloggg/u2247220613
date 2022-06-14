@@ -1,0 +1,16 @@
+<style>
+    .cLower {
+        color: red;
+    }
+</style>
+<span [ngClass]="{cLower: lower}">
+    <!-- {{ info }} -->
+    <!--刻意在內部修改Stock-->
+    <!-- <button (click)="GetStock()">檢查庫存是否足夠</button> -->
+    <ng-content select=".lower" *ngIf="lower;else enough">
+    </ng-content>
+    <ng-template #enough>
+        <ng-content select=".enough"></ng-content>
+    </ng-template>
+
+</span>
