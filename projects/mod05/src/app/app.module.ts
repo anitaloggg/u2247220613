@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LefeCycleComponent } from './lefe-cycle/lefe-cycle.component';
 import { CheckStockComponent } from './check-stock/check-stock.component';
 import { FormsModule } from '@angular/forms';
+import { InTheBoxDirective } from './in-the-box.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LefeCycleComponent,
-    CheckStockComponent
+    CheckStockComponent,
+    InTheBoxDirective
   ],
   imports: [
     BrowserModule,
