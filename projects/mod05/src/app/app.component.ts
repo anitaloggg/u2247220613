@@ -12,6 +12,12 @@ export class AppComponent {
 
   QTY: number = 12;
   Stock: number = 10;
+  vDate = new Date();
+  vString = "This is a book";
+  vMoney = 382140;
+  vNumber = 39.85;
+  vNumber2 = 31.11;
+  vPercent = 10;
 
   ngAfterViewInit() {
     console.log(this.h1?.nativeElement);
