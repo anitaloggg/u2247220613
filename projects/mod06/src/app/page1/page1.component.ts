@@ -18,11 +18,16 @@ export class Page1Component implements OnInit {
     this.meetingRoomForm = this.builder.group({
       'id': ['', [Validators.required]],
       'name': ['', [Validators.required]],
-      "size": [''], 'projector': [''], 'TV': ['']
+      "size": [''], 
+      'projector': [''], 
+      'TV': ['']
     });
   }
   ngOnInit() {
     this.meetingRoomForm.setValue(this.meetingRoom);
   }
+  onSubmit() {
+    this.meetingRoom = this.meetingRoomForm.value;
+}
 
 }
