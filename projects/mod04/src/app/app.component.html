@@ -30,7 +30,9 @@
     <span *ngIf="mySearch.length>0; else notFound">找到了!!</span>
     <ng-template #notFound>沒找到ㄡ ...</ng-template>
   </h3> -->
-  <SearchBox [(searchText)]="mySearch" (searchTextChange)="onTextChange($event)"></SearchBox>
+  <SearchBox [(searchText)]="mySearch" (searchTextChange)="onTextChange($event)">
+    <h1>aaaa</h1>
+  </SearchBox>
   <h3 [ngStyle]="resultStyles" *ngIf="isTouch">
     <ng-container *ngIf="isFound; else notFound">
       找到了 {{mySearch}} !! </ng-container>
