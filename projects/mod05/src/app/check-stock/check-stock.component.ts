@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ContentChildren, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'CheckStock',
@@ -31,5 +31,20 @@ export class CheckStockComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @ContentChildren('span') spans: any;
+
+  ngAfterContentInit() {
+     console.log("ngAfterContentInit - ");
+     this.spans.forEach((element: any) => {
+       console.log("\t", element);
+     });
+   }
+   ngAfterContentChecked() {
+     console.log("ngAfterContentChecked - ");
+     this.spans.forEach((element: any) => {
+       console.log("\t", element);
+     });
+   }
 
 }
