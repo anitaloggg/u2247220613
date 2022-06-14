@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { CheckStockComponent } from './check-stock/check-stock.component';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild("title1") h1: ElementRef | undefined;
+  @ViewChild(CheckStockComponent) checkStock: CheckStockComponent | any;
 
-  QTY : number =12;
-  Stock: number =10;
+  QTY: number = 12;
+  Stock: number = 10;
+
+  ngAfterViewInit() {
+    console.log(this.h1?.nativeElement);
+    console.log("ngAfterViewInit:", this.checkStock);
+  }
+  ngAfterViewChecked() {
+    console.log("ngAfterViewChecked: ", this.checkStock);
+  }
 
   // name = "Life Cycle Hooks"
   title = 'component-lifecycle-hooks';
@@ -18,7 +29,10 @@ export class AppComponent {
   //     this.name = (++this.num).toString();
   //     console.log(`外部改變 name : ${this.name}`);
   //   }, 3000);
-   
+
   // }
+
+
+
 
 }
