@@ -27,5 +27,9 @@ export class Page2Component implements OnInit {
       console.log(roomForm.value);
     this.submitted = true;
   }
-
+  newMeetingRoom(){
+    this.meetingRoom = 
+    new MeetingRoom(102, '', '');    
+   }
+ 
 }
