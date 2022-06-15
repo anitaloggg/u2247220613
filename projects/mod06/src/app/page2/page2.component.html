@@ -16,7 +16,8 @@
     <form #roomForm="ngForm" (ngSubmit)="onSubmit(roomForm)">
         <div class="form-group">
             <label for="name">名稱</label>
-            <input type="text" required class="form-control" [(ngModel)]="meetingRoom.name" #name="ngModel" name="name">
+            <input type="text" required class="form-control" 
+            [(ngModel)]="meetingRoom.name" #name="ngModel" name="name">
             <div *ngIf="name.invalid" class="alert alert-danger">
                 名稱欄位不可空白
             </div>
