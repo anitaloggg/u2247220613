@@ -14,7 +14,8 @@ import { Service1Service } from '../service1.service';
 
   `,
   styles: [
-  ]
+  ], 
+  providers:[ Service1Service]
 })
 export class Page1Component implements OnInit {
 
