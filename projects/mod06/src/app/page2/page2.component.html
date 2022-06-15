@@ -1,0 +1,42 @@
+<style>
+    .ng-valid[required],
+    .ng-valid.required {
+        border-left: 5px solid #42A948;
+        /* green */
+    }
+
+    .ng-invalid:not(form) {
+        border-left: 5px solid #a94442;
+        /* red */
+    }
+</style>
+
+<div class="container">
+    <h1>Meeting Room Form</h1>
+    <form #roomForm="ngForm" (ngSubmit)="onSubmit(roomForm)">
+        <div class="form-group">
+            <label for="name">名稱</label>
+            <input type="text" required class="form-control" [(ngModel)]="meetingRoom.name" #name="ngModel" name="name">
+            <div *ngIf="name.invalid" class="alert alert-danger">
+                名稱欄位不可空白
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="size">容納人數</label>
+            <select class="form-control" [(ngModel)]="meetingRoom.size" name="size">
+                <option *ngFor="let cap of capacity" [value]="cap">{{cap}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="projector">投影機</label>
+            <input type="checkbox" class="form-control" [(ngModel)]="meetingRoom.projector" name="projector">
+        </div>
+        <div class="form-group">
+            <label for="TV">電視</label>
+            <input type="checkbox" class="form-control" [(ngModel)]="meetingRoom.TV" name="TV">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{{meetingRoom | json}}
