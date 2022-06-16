@@ -1,0 +1,8 @@
+{
+    "/MeetingRooms":{
+        "target":"https://localhost:44356",
+        "secure":true, 
+        "changeOrigin": true, 
+        "logLevel":"debug"
+    }
+}
