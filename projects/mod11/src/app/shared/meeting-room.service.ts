@@ -17,7 +17,11 @@ export class MeetingRoomService {
   getList() {
     this.http.get<MeetingRoom[]>(this.rootUrl)
       .toPromise()
-      .then(resp => this.list = resp as MeetingRoom[]);
+      .then(resp => this.list = resp  );
+  }
+  getByID(id:any) {
+    this.http.get<MeetingRoom>(this.rootUrl + `/${id}`)
+      .subscribe(resp => this.formData = resp  );
   }
 
   postMeetingRoom() {
@@ -26,7 +30,7 @@ export class MeetingRoomService {
   putMeetingRoom() {
     return this.http.put(this.rootUrl + '/' + this.formData.id, this.formData);
   }
-  deleteMeetingRoom(id:number) {
+  deleteMeetingRoom(id: number) {
     return this.http.delete(this.rootUrl + '/' + id);
   }
 }
