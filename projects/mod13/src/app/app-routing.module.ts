@@ -5,7 +5,12 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'teacher', loadChildren: () => import('./teacher/teacher.module').then(m => m.TeacherModule) },
-  { path: 'student', loadChildren: () => import('./student/student.module').then(m => m.StudentModule) }];
+  { path: 'student', loadChildren: () => import('./student/student.module').then(m => m.StudentModule) }, 
+  {
+    path: 'mylibrary',
+    loadChildren: () => import('my-library').then(m => m.MyLibraryModule)
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

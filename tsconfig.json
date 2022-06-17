@@ -13,7 +13,9 @@
     "downlevelIteration": true,
     "paths": {
       "my-library": [
-        "dist/my-library/my-library",
+        "projects/my-library/src/public-api.ts",
+
+        // "dist/my-library/my-library",
         "dist/my-library"
       ]
     },
