@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { HomeComponent } from './home/home.component';
+import { UserNameComponent } from './auth/user-name/user-name.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,12 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     LogoutComponent, 
     AdminPageComponent, 
-    HomeComponent
+    HomeComponent, UserNameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
