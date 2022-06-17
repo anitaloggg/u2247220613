@@ -12,21 +12,32 @@ export class SimpleGuard implements CanActivate, CanLoad {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-   
-      console.log("canActivate")
-      let url: string = state.url;
-      const result: boolean = 
-                route.queryParams.name.toLowerCase() === 'admin';
-     if (!result) {
-        alert('你不是會員，無法使用此功能');
-        return this.router.parseUrl('/login?rUrl=' + url);
-      }
-      return result;
-  
+
+    console.log("canActivate")
+    let url: string = state.url;
+    const result: boolean =
+      route.queryParams.name.toLowerCase() === 'admin';
+    if (!result) {
+      alert('你不是會員，無法使用此功能');
+      return this.router.parseUrl('/login?rUrl=' + url);
+    }
+    return result;
+
   }
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    let url: string = segments[0].path;
+   console.log(route);
+   console.log(segments);
+    console.log(segments[0].parameters["name"]);
+    const result: boolean =
+      segments[0].parameters["name"] === 'user1';
+    if (!result) {
+      alert('你不是會員，無法使用此功能');
+      return this.router.parseUrl('/login?rUrl=' + url);
+    }
+    return result;
+
   }
 }
